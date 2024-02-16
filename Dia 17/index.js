@@ -86,6 +86,7 @@ function CadastraReserva(){
     reservas.push(reserva);
 }
 
+// criando uma função para procurar uma reserva pelo o hotel
 function ProcurarReservaPeloHotel(idHotel){
     reservas.forEach(reserva => {
         if(idHotel == reserva.IdHotel){
@@ -98,6 +99,7 @@ function ProcurarReservaPeloHotel(idHotel){
     });
 }
 
+// criando uma função para procurar um hotel pela a reserva
 function ProcurarHotelPelaReserva(idReserva){
     let idHotel = reservas[idReserva - 1].IdHotel;
     console.log("Hotel: " , hoteis[idHotel - 1].Nome);
@@ -107,6 +109,7 @@ function ProcurarHotelPelaReserva(idReserva){
 
 }
 
+// criando uma função para procurar uma reserva pelo o nome
 function ProcurarReservaPeloNome(nome){
     for(let i = 0; i < reservas.length; i++){
         if(nome == reservas[i].Responsavel){
@@ -116,6 +119,7 @@ function ProcurarReservaPeloNome(nome){
     }
 }
 
+// criando uma função para procurar um hotel pela a categoria
 function ProcurarHotelPelaCategoria(categoria){
     let hoteisProcurados = [];
     for(let i = 0; i < hoteis.length; i++){
@@ -126,6 +130,7 @@ function ProcurarHotelPelaCategoria(categoria){
     return hoteisProcurados;
 }
 
+// criando uma função para alterar o número de telefone do hotel
 function AlterandoNumeroDeTelefone(idHotel, telefone){
     hoteis[idHotel - 1].Telefone = telefone;
     console.log("Número alterado com sucesso!");
